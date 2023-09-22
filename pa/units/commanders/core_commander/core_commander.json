@@ -1,0 +1,211 @@
+{
+    "base_spec": "/pa/units/commanders/base_commander/base_commander.json",
+    "unit_name": "Core Commander",
+    "display_name": "!LOC:Core Commander",
+    "description": "!LOC:Core Commander - Equipped with a laser and disintegrator gun (D-Gun). Attacks surface and air targets.",
+    "max_health": 3000,
+    "build_metal_cost": 23512,
+    "build_energy_cost": 35838,
+    "production": {
+        "energy": 25,
+        "metal": 1
+    },
+    "storage": {
+        "energy": 1000,
+        "metal": 1000
+    },
+    "attachable": {
+        "offsets": {
+            "root": [
+                0,
+                0,
+                0
+            ],
+            "head": [
+                0,
+                0,
+                12.2
+            ]
+        }
+    },
+    "buildable_types": "(Custom1 & CmdBuild)",
+    "unit_types": [
+        "UNITTYPE_Custom1",
+        "UNITTYPE_Commander",
+        "UNITTYPE_Construction",
+        "UNITTYPE_Mobile",
+        "UNITTYPE_Offense",
+        "UNITTYPE_Land",
+        "UNITTYPE_Amphibious",
+        "UNITTYPE_NoBuild"
+    ],
+    "command_caps": [
+        "ORDER_Move",
+        "ORDER_Patrol",
+        "ORDER_Build",
+        "ORDER_Attack",
+        "ORDER_Reclaim",
+        "ORDER_Repair",
+        "ORDER_Assist",
+        "ORDER_Use",
+        "ORDER_FireSecondaryWeapon"
+    ],
+    "transportable": {
+        "size": 1
+    },
+    "navigation": {
+        "type": "amphibious",
+        "acceleration": 96,
+        "brake": -1,
+        "move_speed": 6.42,
+        "turn_speed": 169.1,
+        "turn_in_place": false,
+        "park_stamp": {
+            "shape": "sphere",
+            "cost": 20,
+            "type_data": [
+                {
+                    "move_type": "land-small",
+                    "stamp_type": "simple"
+                },
+                {
+                    "move_type": "amphibious",
+                    "stamp_type": "simple"
+                }
+            ]
+        }
+    },
+    "model": {
+        "filename": "/pa/units/commanders/core_commander/core_commander.papa",
+        "animations": {
+            "walk": "/pa/units/commanders/core_commander/core_commander_anim_walk.papa",
+            "idle": "/pa/units/commanders/core_commander/core_commander_anim_idle.papa",
+            "walk_stop": "/pa/units/commanders/core_commander/core_commander_anim_walkStop.papa",
+            "aim_up": "/pa/units/commanders/core_commander/core_commander_anim_aimUp.papa",
+            "aim_down": "/pa/units/commanders/core_commander/core_commander_anim_aimDown.papa"
+        },
+        "animtree": "/pa/units/commanders/core_commander/core_commander_anim_tree.json",
+        "walk_speed": 6.0
+    },
+    "tools": [
+        {
+            "spec_id": "/pa/tools/commander_build_arm/commander_build_arm.json",
+            "aim_bone": "bone_turret"
+        },
+        {
+            "spec_id": "/pa/tools/commander_laser/commander_laser_weapon.json",
+            "aim_bone": "bone_turret",
+            "muzzle_bone": "socket_rightMuzzle",
+            "primary_weapon": true
+        },
+        {
+            "spec_id": "/pa/tools/dgun/dgun_cannon.json",
+            "aim_bone": "bone_turret",
+            "muzzle_bone": "socket_rightMuzzle",
+            "secondary_weapon": true
+        }
+    ],
+    "events": {
+        "fired": {
+            "effect_spec": "/pa/effects/specs/default_muzzle_flash.pfx socket_rightMuzzle"
+        }
+    },
+    "fx_offsets": [
+        {
+            "type": "build",
+            "filename": "/pa/effects/specs/fab_spray.pfx",
+            "bone": "socket_leftMuzzle"
+        }
+    ],
+    "audio": {
+        "loops": {
+            "build": {
+                "cue": "/SE/Construction/Commander_contruction_beam_loop",
+                "flag": "build_target_changed",
+                "should_start_func": "has_build_target",
+                "should_stop_func": "no_build_target"
+            }
+        },
+        "selection_response": {
+            "cue": "/SE/Selection/commander"
+        },
+        "sing_selection_response": {
+            "cue": "/SE/UI/plus/sing"
+        }
+    },
+    "headlights": [
+        {
+            "gobo": "/pa/effects/textures/gobo/spotlight_gobo.papa",
+            "offset": [
+                0.0,
+                -1.7,
+                1.9
+            ],
+            "orientation": [
+                0.0,
+                45.0,
+                0.0
+            ],
+            "near_width": 5.0,
+            "near_height": 5.0,
+            "near_distance": 3.0,
+            "far_distance": 30.0,
+            "color": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "intensity": 6.0,
+            "bone": "bone_spine",
+            "shadow_resolution": 128
+        }
+    ],
+    "lamps": [
+        {
+            "offset": [
+                0.0,
+                -1.7,
+                1.9
+            ],
+            "radius": 2.0,
+            "color": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "intensity": 5.0,
+            "bone": "bone_spine"
+        },
+        {
+            "offset": [
+                0.07,
+                -3.85,
+                0.2
+            ],
+            "radius": 4.0,
+            "color": [
+                0.4,
+                1.0,
+                0.01
+            ],
+            "intensity": 2.0,
+            "bone": "bone_leftElbow"
+        }
+    ],
+    "catalog_object_name": "InvictusCommander",
+    "client": {
+        "ui": {
+            "image": "/ui/main/shared/img/commanders/img_imperial_invictus.png",
+            "thumb_image": "/ui/main/shared/img/commanders/thumbs/img_imperial_invictus_thumb.png",
+            "profile_image": "/ui/main/shared/img/commanders/profiles/profile_imperial_invictus.png"
+        }
+    },
+    "selection_icon": {
+        "diameter": 16.6
+    },
+    "mesh_bounds": [
+        10,
+        10,
+        12
+    ]
+}

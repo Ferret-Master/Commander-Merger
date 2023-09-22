@@ -24,6 +24,44 @@
     border: 1px solid #B200FF  !important;
     box-shadow: 0 0 30px #B200FF  !important;
   }
+/* core commander picker colouring */
+  .div-commander-picker-item.btn_std_ix.coreCommander {
+    color: rgb(255, 220, 220) !important;
+    border-color: #af0017  !important;
+    background: rgba(116, 1, 16, 0.5) !important;
+  }
+  
+  .div-commander-picker-item.coreCommander.btn_std_ix:hover {
+    background: rgba(116, 1, 16, 0.5) !important;
+    border: 1px solid rgba(158, 0, 0, 0.1) !important;
+    box-shadow: 0 0 15px rgba(116, 1, 16, 0.8) !important;
+  }
+  
+  .div-commander-picker-item.coreCommander.btn_std_ix:active {
+    background: #740110  !important;
+    border: 1px solid #af0017  !important;
+    box-shadow: 0 0 30px #740110  !important;
+  }
+
+  /* arm commander picker colouring */
+
+  .div-commander-picker-item.btn_std_ix.armCommander {
+    color: rgb(255, 220, 220) !important;
+    border-color: #305acf  !important;
+    background: rgba(28, 54, 125, 0.5) !important;
+  }
+  
+  .div-commander-picker-item.armCommander.btn_std_ix:hover {
+    background: rgba(28, 54, 125, 0.5) !important;
+    border: 1px solid rgba(28, 54, 125, 0.1) !important;
+    box-shadow: 0 0 15px rgba(28, 54, 125, 0.8) !important;
+  }
+  
+  .div-commander-picker-item.armCommander.btn_std_ix:active {
+    background: #1C367D  !important;
+    border: 1px solid #305acf  !important;
+    box-shadow: 0 0 30px #1C367D  !important;
+  }
   
   /* assim commander outlines */
   
@@ -39,6 +77,40 @@
   
   .slot-player.assimSlot.loading {
     border-image: url("coui://ui/mods/commander_merge/img/ctrl_user_locked_assim.png")
+      0 17 53 17 !important;
+  }
+
+  /* core and arm commander outlines*/
+
+  
+  .slot-player.coreSlot {
+    border-image: url("coui://ui/mods/commander_merge/img/ctrl_user_core.png")
+      0 17 53 17 !important;
+  }
+  
+  .slot-player.coreSlot.ready {
+    border-image: url("coui://ui/mods/commander_merge/img/ctrl_user_locked_core.png")
+      0 17 53 17 !important;
+  }
+  
+  .slot-player.coreSlot.loading {
+    border-image: url("coui://ui/mods/commander_merge/img/ctrl_user_locked_core.png")
+      0 17 53 17 !important;
+  }
+
+  
+  .slot-player.armSlot {
+    border-image: url("coui://ui/mods/commander_merge/img/ctrl_user_arm.png")
+      0 17 53 17 !important;
+  }
+  
+  .slot-player.armSlot.ready {
+    border-image: url("coui://ui/mods/commander_merge/img/ctrl_user_locked_arm.png")
+      0 17 53 17 !important;
+  }
+  
+  .slot-player.armSlot.loading {
+    border-image: url("coui://ui/mods/commander_merge/img/ctrl_user_locked_arm.png")
       0 17 53 17 !important;
   }
 
@@ -137,4 +209,26 @@
     display: inline-block !important;
     color: #B200FF  !important;
     text-shadow: 0 0 40px #B200FF  !important;
+  }
+
+  .coreSlot .slot-player-commander {
+    border: 1px solid #740110  !important;
+  }
+  
+  .coreAlert {
+    margin: 0 20px 0 0 !important;
+    display: inline-block !important;
+    color: #740110  !important;
+    text-shadow: 0 0 40px #B200FF  !important;
+  }
+
+  .armSlot .slot-player-commander {
+    border: 1px solid #1C367D  !important;
+  }
+  
+  .armAlert {
+    margin: 0 20px 0 0 !important;
+    display: inline-block !important;
+    color: #1C367D  !important;
+    text-shadow: 0 0 40px #1C367D  !important;
   }

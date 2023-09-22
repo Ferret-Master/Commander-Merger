@@ -8,6 +8,10 @@ var assimCommanders = [
     "/pa/units/assimilation/commanders/a_quad_donut_duke/a_quad_donut_duke.json"
 ]
 
+var taoArmCommanders = ["/pa/units/commanders/arm_commander/arm_commander.json",]
+
+var taoCoreCommanders = ["/pa/units/commanders/core_commander/core_commander.json",]
+
 var legion = {};
 
 legion.commanders = [
@@ -24,6 +28,16 @@ legion.commanders = [
     "coui://ui/mods/commander_merge/css/faction_commander_picker.css"
   );
 
+  model.isTaoArm = function(commander) {
+
+    return _.includes(taoArmCommanders, commander);
+  };
+
+  model.isTaoCore = function(commander) {
+
+    return _.includes(taoCoreCommanders, commander);
+  }
+
   model.isBugs = function (commander) {
 
     return _.includes(bugCommanders, commander);
@@ -39,23 +53,23 @@ legion.commanders = [
   }
 
   model.isCustomFaction = function (commander) {
-        return (model.isBugs(commander) || model.isLegion(commander) || model.isAssim(commander))
+        return (model.isBugs(commander) || model.isLegion(commander) || model.isAssim(commander) || model.isTaoArm(commander) || model.isTaoCore(commander))
   }
 
-   //Style Commander Picker Bugs
+   //Style Commander Picker
    $("#commander-picker .div-commander-picker-item.btn_std_ix").attr(
     "data-bind",
-    "css: {bugsCommander: model.isBugs($data), legioncommander: model.isLegion($data), assimCommander: model.isAssim($data)},  click: function () { model.setCommander($index()) }, click_sound: 'default', rollover_sound: 'default'"
+    "css: {bugsCommander: model.isBugs($data), legioncommander: model.isLegion($data), assimCommander: model.isAssim($data), coreCommander: model.isTaoCore($data), armCommander: model.isTaoArm($data)},  click: function () { model.setCommander($index()) }, click_sound: 'default', rollover_sound: 'default'"
   );
   $("#ai-commander-picker .div-commander-picker-item.btn_std_ix").attr(
     "data-bind",
-    "css: {bugsCommander: model.isBugs($data), legioncommander: model.isLegion($data), assimCommander: model.isAssim($data)}, click: function () { model.setAICommander(model.selectedAI(), $data) }, click_sound: 'default', rollover_sound: 'default'"
+    "css: {bugsCommander: model.isBugs($data), legioncommander: model.isLegion($data), assimCommander: model.isAssim($data), coreCommander: model.isTaoCore($data), armCommander: model.isTaoArm($data)}, click: function () { model.setAICommander(model.selectedAI(), $data) }, click_sound: 'default', rollover_sound: 'default'"
   );
 
-  //Style Slot Bugs
+  //Style Slot
   $(".slot-player").attr(
     "data-bind",
-    "css: {bugsSlot: !$data.isEmpty() && model.isBugs($data.commander()),assimSlot: !$data.isEmpty() && model.isAssim($data.commander()), mlaslot: !$data.isEmpty() && !model.isCustomFaction($data.commander()),legionslot: !$data.isEmpty() && model.isLegion($data.commander()), ready: isReady, loading: isLoading}"
+    "css: {armSlot: !$data.isEmpty() && model.isTaoArm($data.commander()),coreSlot: !$data.isEmpty() && model.isTaoCore($data.commander()),bugsSlot: !$data.isEmpty() && model.isBugs($data.commander()),assimSlot: !$data.isEmpty() && model.isAssim($data.commander()), mlaslot: !$data.isEmpty() && !model.isCustomFaction($data.commander()),legionslot: !$data.isEmpty() && model.isLegion($data.commander()), ready: isReady, loading: isLoading}"
   );
 
   _.defer(function () {

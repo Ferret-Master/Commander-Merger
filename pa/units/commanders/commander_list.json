@@ -1,6 +1,8 @@
 {
     "commanders": [
         "/pa/units/commanders/bug_commander/bug_commander.json",
+        "/pa/units/commanders/arm_commander/arm_commander.json",
+        "/pa/units/commanders/core_commander/core_commander.json",
         "/pa/units/commanders/l_overwatch/l_overwatch.json",
         "/pa/units/commanders/l_rockteeth/l_rockteeth.json",
         "/pa/units/commanders/l_cyclops/l_cyclops.json",
