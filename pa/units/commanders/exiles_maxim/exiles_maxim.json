@@ -1,5 +1,9 @@
 {
      "base_spec": "/pa/units/commanders/base_commander/base_commander.json",
+     "ai_metal_extractor_names": {
+         "basic": "ExilesBasicMetalExtractor",
+         "advanced": "ExilesAdvancedMetalExtractor"
+     },
     "display_name": "Maxim Commander",
     "si_name": "exiles_maxim",
     "description": "Armored Exile Commander. More HP and better guns but slower and worse at building",
@@ -313,9 +317,9 @@
     "catalog_object_name": "TankAeson",
     "client": {
         "ui": {
-            "image": "/pa/units/commanders/exiles_maxim/untitled6.png",
-            "thumb_image": "/pa/units/commanders/exiles_maxim/untitled7.png",
-            "profile_image": "/pa/units/commanders/exiles_maxim/thumb.png"
+            "image": "/pa/units/commanders/exiles_maxim/img_exiles_maxim.png",
+            "thumb_image": "/pa/units/commanders/exiles_maxim/img_exiles_maxim_thumb.png",
+            "profile_image": "/pa/units/commanders/exiles_maxim/profile_exiles_maxim.png"
         }
     }
 }
